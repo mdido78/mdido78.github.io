@@ -1,7 +1,195 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adrielle ♥ Marco</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --hero-img: url("hero.jpg");
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, sans-serif; background:#0a0a0c; }
+
+    .hero-bg{
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center 35%;
+    }
+
+    .hero-overlay{
+      background: linear-gradient(to bottom,
+        rgba(0,0,0,0.2) 0%,
+        rgba(0,0,0,0.4) 40%,
+        rgba(0,0,0,0.7) 100%);
+    }
+
+    .soft-divider{
+      height:1px;
+      width:300px;
+      margin:0 auto;
+      background:rgba(255,255,255,0.4);
+    }
+
+    .flow-bg{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .flow-bg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center 65%;
+      z-index:0;
+    }
+
+    .flow-bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: var(--hero-img);
+      background-size: cover;
+      background-position: center 65%;
+      filter: blur(25px);
+      transform: scale(1.05);
+      z-index:0;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,1) 100%);
+    }
+
+    .flow-dark{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      background: linear-gradient(to bottom,
+        rgba(0,0,0,0.3) 0%,
+        rgba(0,0,0,0.5) 50%,
+        rgba(0,0,0,0.7) 100%);
+    }
+
+    .title-script{
+      font-family:"Playfair Display", serif;
+      font-style:italic;
+    }
+
+    .stack{
+      position:relative;
+      width:360px;
+      height:280px;
+    }
+
+    .stack img{
+      position:absolute;
+      width:300px;
+      height:215px;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 20px 45px rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .stack .a{ left:0; top:0; }
+    .stack .b{ left:225px; }
+
+    .dinners .b{ top:70px; }
+
+    .nightcaps .a{ top:70px; }
+    .nightcaps .b{ top:0; }
+
+    .h-scroll{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      padding-bottom:10px;
+    }
+
+    .snap-card{ scroll-snap-align:start; }
+
+    .right-fade{
+      pointer-events:none;
+      position:absolute;
+      top:0;
+      right:0;
+      height:100%;
+      width:140px;
+      background: linear-gradient(to left, rgba(10,10,12,1) 0%, rgba(10,10,12,0) 100%);
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<header class="hero-bg relative min-h-screen">
+  <div class="hero-overlay absolute inset-0"></div>
+  <div class="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
+    <h1 class="title-script text-6xl md:text-7xl">Adrielle ♥ Marco</h1>
+    <p class="mt-4 text-lg text-white/80">Our story in moments</p>
+  </div>
+  <div class="absolute bottom-8 left-0 right-0">
+    <div class="soft-divider"></div>
+  </div>
+</header>
+
+<section id="video" class="flow-bg relative py-20">
+  <div class="flow-dark"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6">
+    <h2 class="text-center text-3xl md:text-4xl font-semibold">A Moment We Love</h2>
+    <div class="mt-10 aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/50">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+
+    <div>
+      <h3 class="text-3xl font-semibold">Our Lucullian Dinners</h3>
+      <div class="mt-8 stack dinners">
+        <img class="a" src="dinner-1.jpg" />
+        <img class="b" src="dinner-2.jpg" />
+      </div>
+    </div>
+
+    <div class="md:pt-12">
+      <h3 class="text-3xl font-semibold">Our Nightcaps</h3>
+      <div class="mt-8 stack nightcaps">
+        <img class="a" src="nightcap-1.jpg" />
+        <img class="b" src="nightcap-2.jpg" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="py-20 bg-[#0c0c10] relative">
+  <div class="max-w-6xl mx-auto px-6 relative">
+    <h3 class="text-3xl font-semibold">Our Experiences</h3>
+    <div class="mt-8 relative">
+      <div class="h-scroll">
+        <img class="snap-card min-w-[320px] h-[260px] object-cover rounded-2xl border border-white/10" src="exp-1.jpg" />
+        <img class="snap-card min-w-[320px] h-[260px] object-cover rounded-2xl border border-white/10" src="exp-2.jpg" />
+        <img class="snap-card min-w-[320px] h-[260px] object-cover rounded-2xl border border-white/10" src="exp-3.jpg" />
+        <img class="snap-card min-w-[320px] h-[260px] object-cover rounded-2xl border border-white/10" src="exp-4.jpg" />
+      </div>
+      <div class="right-fade"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-10 text-center text-white/50 text-sm">
+  Made with ♥
+</footer>
+
 </body>
 </html>
