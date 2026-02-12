@@ -320,7 +320,7 @@
   });
 
   const fsBtn = document.getElementById("fsBtn");
-  const videoWrap = document.getElementById("videoWrap");
+  const ytVideo = document.getElementById("ytVideo");
 
   function requestFS(el) {
     if (el.requestFullscreen) return el.requestFullscreen();
@@ -330,7 +330,7 @@
 
   fsBtn?.addEventListener("click", () => {
     // Fullscreen the wrapper (works even with iframe inside)
-    requestFS(videoWrap);
+    requestFS(ytVideo);
   });
 </script>
 
