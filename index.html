@@ -183,21 +183,37 @@
   </div>
 </header>
 
-<!-- VIDEO (with overlay frame PNG) -->
+<!-- VIDEO (with large overlay frame PNG) -->
 <section id="video" class="video-section relative py-20">
-  <div class="relative z-10 max-w-4xl mx-auto px-6">
-    <h2 class="text-center text-3xl md:text-4xl font-semibold">Jackpot adventures in the making</h2>
+  <div class="relative z-10 max-w-[90vw] mx-auto px-6">
+
+    <h2 class="text-center text-3xl md:text-4xl font-semibold">
+      Jackpot adventures in the making
+    </h2>
 
     <div class="mt-10 aspect-video video-frame-wrap">
       <iframe
-        src="https://www.youtube.com/embed/qi46Z38pOg0"
+        id="ytVideo"
+        src="https://www.youtube.com/embed/qi46Z38pOg0?enablejsapi=1"
+        allow="fullscreen"
         allowfullscreen
         title="YouTube video"
       ></iframe>
 
-      <!-- ✅ Replace this filename with your exported PNG -->
-      <img class="video-frame-overlay" src="AdriLookingAtVideo.png" alt="">
+      <!-- Your transparent window PNG -->
+      <img class="video-frame-overlay" src="window-frame.png" alt="">
     </div>
+
+    <!-- Custom fullscreen button -->
+    <div class="text-center mt-8">
+      <button
+        onclick="openFullscreen()"
+        class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 transition border border-white/20 backdrop-blur-md"
+      >
+        ⛶ Watch Fullscreen
+      </button>
+    </div>
+
   </div>
 </section>
 
